@@ -24,6 +24,9 @@ namespace FiguresWF
                 case 1: // окружность
                     fig = new Circle((double)size1_numericUpDown.Value);
                     break;
+                case 2: // квадрат
+                    fig = new Square_((double)size1_numericUpDown.Value);
+                    break;
             }
             fig.Square();
             protocol_listBox.Items.Add(fig.ToString() + ": S=" + fig.Square());
@@ -39,6 +42,9 @@ namespace FiguresWF
 
                 case 1: // окружность
                     fig = new Circle((double)size1_numericUpDown.Value);
+                    break;
+                case 2: // квадрат
+                    fig = new Square_((double)size1_numericUpDown.Value);
                     break;
             }
             fig.Perimeter();
@@ -67,6 +73,20 @@ namespace FiguresWF
                 size3_numericUpDown.Visible = false;
                 size4_numericUpDown.Visible = false;
                 label2.Text = "Радиус";
+                label3.Text = "";
+                label4.Text = "";
+                label5.Text = "";
+                groupBox1.Height = 110;
+                square_button.Location = new Point(square_button.Location.X, 129);
+                perimeter_button.Location = new Point(perimeter_button.Location.X, 169);
+            }
+            if (figure_comboBox.SelectedIndex == 2)
+            {
+                size1_numericUpDown.Visible = true;
+                size2_numericUpDown.Visible = false;
+                size3_numericUpDown.Visible = false;
+                size4_numericUpDown.Visible = false;
+                label2.Text = "Сторона";
                 label3.Text = "";
                 label4.Text = "";
                 label5.Text = "";
