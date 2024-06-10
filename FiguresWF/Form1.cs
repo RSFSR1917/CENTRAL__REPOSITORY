@@ -30,6 +30,9 @@ namespace FiguresWF
                 case 3: // треугольник
                     fig = new Triangle((double)size1_numericUpDown.Value, (double)size2_numericUpDown.Value, (double)size3_numericUpDown.Value);
                     break;
+                case 4: // трапеция
+                    fig = new Trapeze((double)size1_numericUpDown.Value, (double)size2_numericUpDown.Value, (double)size3_numericUpDown.Value, (double)size4_numericUpDown.Value);
+                    break;
             }
             fig.Square();
             protocol_listBox.Items.Add(fig.ToString() + ": S=" + fig.Square());
@@ -51,6 +54,9 @@ namespace FiguresWF
                     break;
                 case 3: // треугольник
                     fig = new Triangle((double)size1_numericUpDown.Value, (double)size2_numericUpDown.Value, (double)size3_numericUpDown.Value);
+                    break;
+                case 4: // трапеция
+                    fig = new Trapeze((double)size1_numericUpDown.Value, (double)size2_numericUpDown.Value, (double)size3_numericUpDown.Value, (double)size4_numericUpDown.Value);
                     break;
             }
             fig.Perimeter();
@@ -116,6 +122,24 @@ namespace FiguresWF
                 size3_numericUpDown.Location = new Point(91, size3_numericUpDown.Location.Y);
                 square_button.Location = new Point(square_button.Location.X, 169);
                 perimeter_button.Location = new Point(perimeter_button.Location.X, 209);
+            }
+            if (figure_comboBox.SelectedIndex == 4)
+            {
+                size1_numericUpDown.Visible = true;
+                size2_numericUpDown.Visible = true;
+                size3_numericUpDown.Visible = true;
+                size4_numericUpDown.Visible = true;
+                label2.Text = "Сторона А";
+                label3.Text = "Сторона В";
+                label4.Text = "Сторона С";
+                label5.Text = "Сторона D";
+                groupBox1.Height = 170;
+                size1_numericUpDown.Location = new Point(91, size1_numericUpDown.Location.Y);
+                size2_numericUpDown.Location = new Point(91, size2_numericUpDown.Location.Y);
+                size3_numericUpDown.Location = new Point(91, size3_numericUpDown.Location.Y);
+                size4_numericUpDown.Location = new Point(91, size4_numericUpDown.Location.Y);
+                square_button.Location = new Point(square_button.Location.X, 189);
+                perimeter_button.Location = new Point(perimeter_button.Location.X, 229);
             }
         }
     }
